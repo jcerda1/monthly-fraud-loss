@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Navbar, Nav, NavDropdown }  from 'react-bootstrap'
+import { Navbar, Nav, NavDropdown }  from 'react-bootstrap'
 
 
 let Header = () => {
@@ -13,7 +13,7 @@ let Header = () => {
             <Nav.Link href="#Reports">Reports</Nav.Link>
             <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
               <NavDropdown.Item href="#action/3.1">Before RippleShot</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">After Using RippleShot</NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.2">After RippleShot</NavDropdown.Item>
             </NavDropdown>
           </Nav>
         </Navbar.Collapse>

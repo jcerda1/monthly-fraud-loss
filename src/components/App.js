@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import '../App.css';
-import { Container, Row, Col, Navbar }  from 'react-bootstrap';
+import { Row, Col }  from 'react-bootstrap';
 import {mockData} from '../mockData/data'
 import Header from './Header.js';
 import ActiveAccount from './ActiveAccount'
+import DateRange from './DateRange'
 
 
 class App extends Component {
@@ -18,11 +19,7 @@ class App extends Component {
     console.log(this)
     return (
       <div className="App">
-        <div>
-          <Header/>
-        </div>
-        <div className="sideNav">
-      
+        <Header/>
           <Row>
             <Col className="col" lg={2} md={2} sm={12} xs={12}>
               <ActiveAccount active={this.state.activeAccounts}/>
@@ -36,12 +33,19 @@ class App extends Component {
           </Row>
 
           <Row>
-            <Col className="col" xs={{span: 12, order: 2}} sm={{span: 12, order: 2}} md={{span: 2, order: 1}} lg={{span: 2, order: 1}}>
-              <div style={{height: '150px'}}>
-                add the date range component here
-              </div>
+            <Col 
+              xs={{span: 12, order: 2}} 
+              sm={{span: 12, order: 2}} 
+              md={{span: 2, order: 1}} 
+              lg={{span: 2, order: 1}}
+            >
+              <DateRange fromRange={this.state.fraudLossByMonth[18].date} toRange={this.state.fraudLossByMonth[0].date} />
             </Col>
-            <Col className="col" lg={10} md={10} sm={12} xs={{order: 1, span: 12}}>
+            <Col className="col" 
+              lg={10} md={10} 
+              sm={12} 
+              xs={{order: 1, span: 12}}
+            >
               <div >
                 This is the data graph
               </div>
@@ -50,7 +54,7 @@ class App extends Component {
 
           <Row>
             <Col className="col"lg={2} md={2}>
-             add the from to date here
+             number of days
             </Col>
           </Row>
 
@@ -59,8 +63,6 @@ class App extends Component {
               report botton
             </Col>
           </Row>
-
-        </div>
       </div>
     );
   }
