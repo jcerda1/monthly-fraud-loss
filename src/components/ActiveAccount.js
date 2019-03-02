@@ -4,7 +4,7 @@ import React from 'react';
 
 let ActiveAccount = (props) => {
     return (
-      <div style={{'height': '150px', alignContent: 'center'}}> 
+      <div style={{'height': '180px', alignContent: 'center'}}> 
         <h5>
            Active Accounts 
         </h5>

@@ -3,7 +3,7 @@ import React from 'react';
 
 let DateRange = (props) => {
   return (
-    <div style={{'height': '150px', alignContent: 'center'}}> 
+    <div style={{'height': '175px', alignContent: 'center'}}> 
       <h5>
         Range of Dates
       </h5>
