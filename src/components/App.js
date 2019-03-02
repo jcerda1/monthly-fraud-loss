@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import '../App.css';
-import { Container, Row, Col, Navbar }  from 'react-bootstrap'
+import { Container, Row, Col, Navbar }  from 'react-bootstrap';
+import {mockData} from '../mockData/data'
 import Header from './Header.js';
 import ActiveAccount from './ActiveAccount'
 
@@ -9,10 +10,12 @@ class App extends Component {
   constructor() {
     super()
     this.state = {
-      activeAccounts: '191,590'
+      activeAccounts: '191,590',
+      fraudLossByMonth: mockData,
     }
   }
   render() {
+    console.log(this)
     return (
       <div className="App">
         <div>

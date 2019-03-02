@@ -1,0 +1,22 @@
+export  const mockData = [
+    {date: "2018-10", activeAccounts: "191,590", fraudLoss: "$107,913.03"},
+    {date: "2018-09", activeAccounts: "190,024", fraudLoss: "$126,298.58"},
+    {date: "2018-08", activeAccounts: "198,256", fraudLoss: "$142,742.04"},
+    {date: "2018-07", activeAccounts: "186,656", fraudLoss: "$133,174.23"},
+    {date: "2018-06", activeAccounts: "185,545", fraudLoss: "$158,109.56"},
+    {date: "2018-05", activeAccounts: "174,061", fraudLoss: "$150,104.61"},
+    {date: "2018-04", activeAccounts: "159,650", fraudLoss: "$151,862.52"},
+    {date: "2018-03", activeAccounts: "159,571", fraudLoss: "$142,628.53"},
+    {date: "2018-02", activeAccounts: "155,431", fraudLoss: "$195,651.19"},
+    {date: "2018-01", activeAccounts: "155,070", fraudLoss: "$129,546.76"},
+    {date: "2017-12", activeAccounts: "157,601", fraudLoss: "$86,976.39"},
+    {date: "2017-11", activeAccounts: "156,590", fraudLoss: "$105,117.20"},
+    {date: "2017-10", activeAccounts: "156,372", fraudLoss: "$97,841.69"},
+    {date: "2017-09", activeAccounts: "156,832", fraudLoss: "$100,138.09"},
+    {date: "2017-08", activeAccounts: "155,179", fraudLoss: "$125,298.79"},
+    {date: "2017-07", activeAccounts: "158,696", fraudLoss: "$186,948.13"},
+    {date: "2017-06", activeAccounts: "158,819", fraudLoss: "$102,560.75"},
+    {date: "2017-05", activeAccounts: "155,772", fraudLoss: "$118,325.35"},
+    {date: "2017-04", activeAccounts: "151,438", fraudLoss: "$127,945.33"},
+];
+  
