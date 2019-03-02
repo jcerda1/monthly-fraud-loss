@@ -1,9 +1,9 @@
 import React from 'react';
-
+import moment from 'moment'
 
 let DateRange = (props) => {
   return (
-    <div style={{'height': '175px', alignContent: 'center'}}> 
+    <div style={{'height': '120px', alignContent: 'center'}}> 
       <h5>
         Range of Dates
       </h5>

@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  background-color:#192b47;
 }
 
 .App-logo {
@@ -27,8 +28,8 @@
   padding-top: 2em;
   padding-bottom: 2em;
   text-align: center;
-  border: 1px solid rgb(190, 206, 195);
-  background-color: #576377;
+  border: 1px solid #192b47;
+  background-color: #3e66a5;
   color: white;
 }
 .sideNav {

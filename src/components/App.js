@@ -25,10 +25,15 @@ class App extends Component {
               <ActiveAccount active={this.state.activeAccounts}/>
             </Col>
             <Col className="col" lg={5} md={5} sm={4} xs={12}>
-              This is where a graph will be before rippleshot
+              <div style={{minHeight: '100px', height: '300px', }}>
+                This is where a graph will be before rippleshot
+              </div>
             </Col>
             <Col className="col" lg={5} md={5} sm={4} xs={12}> 
-              This is where a graph will be after rippleshot
+              <div style={{minHeight: '100px', height: '300px', }}>
+                This is where a graph will be after rippleshot
+              </div>
+              
             </Col>
           </Row>
 
@@ -64,7 +69,7 @@ class App extends Component {
 
           <Row>
             <Col className="col" lg={2} md={2}>
-              <ReportButton variant={"primary"} value={'Generate Report'}/>
+              <ReportButton variant={"dark"} value={'Generate Report'}/>
             </Col>
           </Row>
       </div>
