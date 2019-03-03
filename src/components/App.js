@@ -7,6 +7,7 @@ import ActiveAccount from './ActiveAccount';
 import DateRange from './DateRange';
 import DaysRange from './DaysRange';
 import ReportButton from './ReportButton';
+import LossChart from './LossChart';
 
 class App extends Component {
   constructor() {
@@ -17,6 +18,7 @@ class App extends Component {
     }
   }
   render() {
+    console.log(this)
     return (
       <div className="App">
         <Header/>
@@ -24,16 +26,15 @@ class App extends Component {
             <Col className="col" lg={2} md={2} sm={4} xs={12}>
               <ActiveAccount active={this.state.activeAccounts}/>
             </Col>
-            <Col className="col" lg={5} md={5} sm={4} xs={12}>
-              <div style={{minHeight: '100px', height: '300px', }}>
-                This is where a graph will be before rippleshot
-              </div>
+            <Col lg={5} md={5} sm={4} xs={12}>
+              <LossChart 
+                loss={this.state.fraudLossByMonth.map(entry => entry.fraudLoss.slice(1))}            
+                date={this.state.fraudLossByMonth.map(entry => entry.date)} 
+                title={"Loss Before RippleShot"}
+              />
             </Col>
-            <Col className="col" lg={5} md={5} sm={4} xs={12}> 
-              <div style={{minHeight: '100px', height: '300px', }}>
-                This is where a graph will be after rippleshot
-              </div>
-              
+            <Col lg={5} md={5} sm={4} xs={12}> 
+              <LossChart date={this.state.fraudLossByMonth.map(entry => entry.date)} title={"Loss After RippleShot"}/>
             </Col>
           </Row>
 
@@ -50,7 +51,7 @@ class App extends Component {
                 toRange={this.state.fraudLossByMonth[0].date} 
               />
             </Col>
-            <Col className="col" 
+            <Col 
               lg={10} md={10} 
               sm={12} 
               xs={{order: 1, span: 12}}
