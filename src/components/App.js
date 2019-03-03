@@ -18,7 +18,6 @@ class App extends Component {
     }
   }
   render() {
-    console.log(this)
     return (
       <div className="App">
         <Header/>
@@ -28,13 +27,19 @@ class App extends Component {
             </Col>
             <Col lg={5} md={5} sm={4} xs={12}>
               <LossChart 
-                loss={this.state.fraudLossByMonth.map(entry => entry.fraudLoss.slice(1))}            
-                date={this.state.fraudLossByMonth.map(entry => entry.date)} 
+                type={"bar"}
+                loss={this.state.fraudLossByMonth.map(entry => parseInt(entry.fraudLoss.slice(1, -3)))}            
+                date={this.state.fraudLossByMonth.map(entry => entry.date).reverse().slice(0,6)} 
                 title={"Loss Before RippleShot"}
               />
             </Col>
             <Col lg={5} md={5} sm={4} xs={12}> 
-              <LossChart date={this.state.fraudLossByMonth.map(entry => entry.date)} title={"Loss After RippleShot"}/>
+              <LossChart 
+                type={"bar"} 
+                date={this.state.fraudLossByMonth.map(entry => entry.date).reverse().slice(6)} 
+                loss={this.state.fraudLossByMonth.map(entry => parseInt(entry.fraudLoss.slice(1, -3)))}
+                title={"Loss After RippleShot"}
+              />
             </Col>
           </Row>
 
@@ -56,9 +61,7 @@ class App extends Component {
               sm={12} 
               xs={{order: 1, span: 12}}
             >
-              <div >
-                This is the data graph
-              </div>
+            Hello
             </Col>
           </Row>
 

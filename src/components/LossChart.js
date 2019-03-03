@@ -7,13 +7,14 @@ export default class LossChart extends Component {
     super(props);
   }
   componentDidMount() {
+      console.log(this.props)
     const node = this.node;
     var myChart = new Chart(node, {
-        type: 'bar',
+        type: this.props.type,
         data: {
             labels: this.props.date,
             datasets: [{
-                label: this.props.title,
+                label: 'Fraud Loss',
                 data: this.props.loss,
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.2)',
@@ -21,7 +22,21 @@ export default class LossChart extends Component {
                     'rgba(255, 206, 86, 0.2)',
                     'rgba(75, 192, 192, 0.2)',
                     'rgba(153, 102, 255, 0.2)',
-                    'rgba(255, 159, 64, 0.2)'
+                    'rgba(255, 159, 64, 0.2)',
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(153, 102, 255, 0.2)',
+                    'rgba(255, 159, 64, 0.2)',
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(153, 102, 255, 0.2)',
+                    'rgba(255, 159, 64, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+
                 ],
                 borderColor: [
                     'rgba(255,99,132,1)',
@@ -29,21 +44,40 @@ export default class LossChart extends Component {
                     'rgba(255, 206, 86, 1)',
                     'rgba(75, 192, 192, 1)',
                     'rgba(153, 102, 255, 1)',
-                    'rgba(255, 159, 64, 1)'
+                    'rgba(255, 159, 64, 1)',
+                    'rgba(255,99,132,1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)',
+                    'rgba(255,99,132,1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)',
+                    'rgba(54, 162, 235, 1)',
                 ],
                 borderWidth: 1
             }]
         },
         options: {
             scales: {
-                yAxes: [{
+                xAxes: [{
                     ticks: {
                         beginAtZero:true
                     }
                 }]
             },
             xAxisID: 'Months',
-            yAxisID: 'Loss in $'
+            yAxisID: 'Loss in $',
+            barThickness: 'flex',
+            title: {
+                display: true,
+                text: this.props.title,
+                fontColor: '#ffffff'
+            }
         }
     });
   }
@@ -51,7 +85,7 @@ export default class LossChart extends Component {
     return(
       <div>
         <canvas
-          style={{width: 1000, height: 500}}
+          style={{width: 1000, height: 800}}
           ref={node => this.node = node}
         />
       </div>
