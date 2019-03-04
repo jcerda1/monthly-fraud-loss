@@ -14,7 +14,7 @@ class App extends Component {
   constructor() {
     super()
     this.state = {
-      activeAccounts:  mockData[0].activeAccounts,
+      activeAccounts:  mockData[18].activeAccounts,
       fraudLossByMonth: mockData,
     }
   }
@@ -53,8 +53,8 @@ class App extends Component {
               lg={{span: 2, order: 1}}
             >
               <DateRange 
-                fromRange={this.state.fraudLossByMonth[18].date} 
-                toRange={this.state.fraudLossByMonth[0].date} 
+                fromRange={this.state.fraudLossByMonth[0].date} 
+                toRange={this.state.fraudLossByMonth[18].date} 
               />
             </Col>
             <Col 
@@ -62,10 +62,10 @@ class App extends Component {
               sm={12} 
               xs={{order: 1, span: 12}}
             >
-            <AccountsLineGraph
-              account={this.state.fraudLossByMonth.map(entry => parseInt(entry.activeAccounts.slice(0,3)))}
-              loss={this.state.fraudLossByMonth.map(entry => parseInt(entry.fraudLoss.slice(1, -3)))}
-              date={this.state.fraudLossByMonth.map(entry => entry.date)} 
+              <AccountsLineGraph
+                account={this.state.fraudLossByMonth.map(entry => parseInt(entry.activeAccounts.slice(0,3)))}
+                loss={this.state.fraudLossByMonth.map(entry => parseInt(entry.fraudLoss.slice(1, -3)))}
+                date={this.state.fraudLossByMonth.map(entry => entry.date)} 
               />
             </Col>
           </Row>

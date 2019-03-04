@@ -1,21 +1,18 @@
 import React, { Component } from 'react';
 import Chart from 'chart.js'
-import { throws } from 'assert';
+
 
 
 export default class AccountsLineGraph extends Component {
-    constructor(props) {
-      super(props);
-    }
     componentDidMount() {
       const node = this.node;
-      var MyLineGraph = new Chart(node, {
+      var lineGraph = new Chart(node, {
           type: 'line',
           data: {
             datasets: [{
                 data: this.props.account,
                 backgroundColor: [
-                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(54, 162, 235, 0.5)',
                 ],
                 borderColor: [
                     'rgba(54, 162, 235, 1)',
@@ -50,21 +47,24 @@ export default class AccountsLineGraph extends Component {
                     type: 'linear',
                     position: 'right'
                 }]
-            }
+            },
+            title: {
+                display: true,
+                text: 'Active Accounts and Fraud Loss',
+                fontColor: '#ffffff'
+            },
         }
       });
     }
     render() {
-        console.log(this.props)
       return(
         <div>
           <canvas
-            style={{width: 1000, height: 500}}
+            className="canvas"
             ref={node => this.node = node}
           />
         </div>
       )
     }
-    
-  }
+  };
   
