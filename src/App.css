@@ -3,7 +3,6 @@
   background-color:#192b47;
 }
 
-
 .col {
   padding-top: 2em;
   padding-bottom: 2em;
@@ -11,6 +10,10 @@
   border: 1px solid #192b47;
   background-color: #3e66a5;
   color: white;
+}
+
+.container {
+  height: '120px';
 }
 
 .canvas {

@@ -3,7 +3,7 @@ import React from 'react';
 
 let DaysRange = (props) => {
   return (
-    <div style={{height: '120px', alignContent: 'center'}}> 
+    <div className="container"> 
       <h5>
         Total Days in Report
       </h5>

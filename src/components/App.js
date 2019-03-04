@@ -43,7 +43,6 @@ class App extends Component {
               />
             </Col>
           </Row>
-
           <Row>
             <Col 
               className="col"
@@ -69,13 +68,11 @@ class App extends Component {
               />
             </Col>
           </Row>
-
           <Row>
             <Col className="col"lg={2} md={2}>
                <DaysRange/>
             </Col>
           </Row>
-
           <Row>
             <Col className="col" lg={2} md={2}>
               <ReportButton variant={"dark"} value={'Generate Report'}/>

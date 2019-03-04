@@ -12,8 +12,8 @@ let Header = () => {
             <Nav.Link href="#Dashboard">Dashboard</Nav.Link>
             <Nav.Link href="#Reports">Reports</Nav.Link>
             <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">Before RippleShot</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">After RippleShot</NavDropdown.Item>
+              <NavDropdown.Item onClick={() => alert('Dates 2017-04 - 2017-09')} href="#action/3.1">Before RippleShot</NavDropdown.Item>
+              <NavDropdown.Item onClick={() => alert('Dates 2017-10- 2018-10')}href="#action/3.2">After RippleShot</NavDropdown.Item>
             </NavDropdown>
           </Nav>
         </Navbar.Collapse>
