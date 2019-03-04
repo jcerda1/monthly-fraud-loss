@@ -8,6 +8,7 @@ import DateRange from './DateRange';
 import DaysRange from './DaysRange';
 import ReportButton from './ReportButton';
 import LossChart from './LossChart';
+import AccountsLineGraph from './AccountsLineGraph';
 
 class App extends Component {
   constructor() {
@@ -29,14 +30,14 @@ class App extends Component {
               <LossChart 
                 type={"bar"}
                 loss={this.state.fraudLossByMonth.map(entry => parseInt(entry.fraudLoss.slice(1, -3)))}            
-                date={this.state.fraudLossByMonth.map(entry => entry.date).reverse().slice(0,6)} 
+                date={this.state.fraudLossByMonth.map(entry => entry.date).slice(0,6)} 
                 title={"Loss Before RippleShot"}
               />
             </Col>
             <Col lg={5} md={5} sm={4} xs={12}> 
               <LossChart 
                 type={"bar"} 
-                date={this.state.fraudLossByMonth.map(entry => entry.date).reverse().slice(6)} 
+                date={this.state.fraudLossByMonth.map(entry => entry.date).slice(6)} 
                 loss={this.state.fraudLossByMonth.map(entry => parseInt(entry.fraudLoss.slice(1, -3)))}
                 title={"Loss After RippleShot"}
               />
@@ -61,7 +62,11 @@ class App extends Component {
               sm={12} 
               xs={{order: 1, span: 12}}
             >
-            Hello
+            <AccountsLineGraph
+              account={this.state.fraudLossByMonth.map(entry => parseInt(entry.activeAccounts.slice(0,3)))}
+              loss={this.state.fraudLossByMonth.map(entry => parseInt(entry.fraudLoss.slice(1, -3)))}
+              date={this.state.fraudLossByMonth.map(entry => entry.date)} 
+              />
             </Col>
           </Row>
 

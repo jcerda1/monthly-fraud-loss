@@ -7,7 +7,7 @@ export default class LossChart extends Component {
     super(props);
   }
   componentDidMount() {
-      console.log(this.props)
+
     const node = this.node;
     var myChart = new Chart(node, {
         type: this.props.type,
@@ -85,7 +85,7 @@ export default class LossChart extends Component {
     return(
       <div>
         <canvas
-          style={{width: 1000, height: 800}}
+          style={{width: 1000, height: 500}}
           ref={node => this.node = node}
         />
       </div>

@@ -7,7 +7,7 @@ let DaysRange = (props) => {
       <h5>
         Total Days in Report
       </h5>
-        500
+        550
     </div>
   )
 };
